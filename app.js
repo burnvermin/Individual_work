@@ -16,7 +16,7 @@ var store = new Vue ({
                
     methods: {
         addItem: function() {
-            console.log(this.lessons.id)
+            console.log(lessons)
         },
         showCheckout(){
             this.showProduct = this.showProduct ? false : true;
@@ -24,9 +24,7 @@ var store = new Vue ({
 
     },
     computed: {
-        cartItemCount: function (){
-            return this.cart.length || '';
-        },
+        
         sorted() {
             let sortLessons = this.Lessons;       
      

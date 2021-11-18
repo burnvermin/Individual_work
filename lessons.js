@@ -6,7 +6,7 @@ let lessons = [
         "price": 250,
         "spaces": 5,
         "numberPurchased": 5,
-        "image": "\\images//Maths.png"
+        "image": "\images//Maths.png"
     },
     {
         "id" : 2,
@@ -15,7 +15,7 @@ let lessons = [
         "price": 550,
         "spaces": 5,
         "numberPurchased": 5,
-        "image": "\\images//UX.jpeg"
+        "image": "\images//UX.jpeg"
   },
   {
         "id" : 3,
@@ -24,7 +24,7 @@ let lessons = [
         "price": 300,
         "spaces": 5,
         "numberPurchased": 5,
-        "image": "\\images//WD.png"
+        "image": "\images//WD.png"
     },
     {
         "id" : 4,
@@ -33,7 +33,7 @@ let lessons = [
         "price": 500,
         "spaces": 5,
         "numberPurchased": 5,
-        "image": "\\images//ENG.jpg"
+        "image": "\images//ENG.jpg"
     },
     {
         "id" : 5,
@@ -42,7 +42,7 @@ let lessons = [
         "price": 199,
         "spaces": 5,
         "numberPurchased": 5,
-        "image": "\\images//Py.jpg"
+        "image": "\images//Py.jpg"
     },
     {
         "id" : 6,
@@ -51,7 +51,7 @@ let lessons = [
         "price": 499,
         "spaces": 5,
         "numberPurchased": 5,
-        "image": "\\images//EE.png"
+        "image": "\images//EE.png"
     },
     {
         "id" : 7,
@@ -60,7 +60,7 @@ let lessons = [
         "price": 700,
         "spaces": 5,
         "numberPurchased": 5,
-        "image": "\\images//RS.jpg"
+        "image": "\images//RS.jpg"
     },
     {
         "id" : 8,
@@ -69,7 +69,7 @@ let lessons = [
         "price": 69,
         "spaces": 5,
         "numberPurchased": 5,
-        "image": "\\images//Hunt.jpg"
+        "image": "\images//Hunt.jpg"
     },
     {
         "id" : 9,
@@ -78,7 +78,7 @@ let lessons = [
         "price": 299,
         "spaces": 5,
         "numberPurchased": 5,
-        "image": "\\images//MS.png"
+        "image": "\images//MS.png"
     },
     {
         "id" : 10,
@@ -87,6 +87,6 @@ let lessons = [
         "price": 10_000,
         "spaces": 5,
         "numberPurchased": 5,
-        "image": "\\images//maf.jpg"
+        "image": "\images//maf.jpg"
     }
 ]
