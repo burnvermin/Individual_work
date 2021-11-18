@@ -12,24 +12,24 @@
 <body>
     <div class="container" id="section1">   
         <div class="header" >
-            <div class="sort">
-                <select name="sortby" id="sortbBy" v-on:click="sorted">
-                    <option  value="subject">Sort by Subject</option>
+            <div class="sort" >
+                <select name="sortBy" id="select" v-model="sortBy" >
+                    <option value="subject">Sort by Subject</option>
                     <option value="location">Sort by Location</option>
                     <option value="price">Sort by Price</option>
                     <option value="availability">Sort by Availability</option>
                 </select>
-                <select name="orderby" id="orderBy" >
-                    <option id="order" value="ascending" >Ascending</option>
-                    <option id="order" value="descending">Descending</option>
+                <select name="orderby" id="orderBy" v-model="orderBy">
+                    <option value="ascending" >Ascending</option>
+                    <option value="descending">Descending</option>
                 </select>
             </div>
 
             <form action="" class="search">
-                <input type="text" v-model="searchValue" placeholder="Search for a lesson"><a class="fa fa-search"></a>
+                <input type="text"  placeholder="Search for a lesson"><a class="fa fa-search"></a>
             </form>
 
-            <button class="cart-btn" v-on:click="showcart">
+            <button class="cart-btn" >
                 Cart&nbsp;&nbsp;&nbsp;
                 <span class="fas fa-cart-plus"></span>
             </button> 
@@ -43,7 +43,7 @@
                 <p><strong>Location: </strong>{{lesson.location}}</p>
                 <p><strong>Price: </strong><i class="fa-solid fa-dollar-sign"></i> {{lesson.price}}.00</p>
                 <p><strong>Available spaces: </strong>{{lesson.spaces}}</p>
-                <button class="btn"  v-on:Click="addItem">Buy Now!</button>
+                <button class="btn"  >Buy Now!</button>
         </div>
         </div>
         </div>

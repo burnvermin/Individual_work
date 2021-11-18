@@ -3,7 +3,9 @@ var store = new Vue ({
     data: {
         sitename: 'After School Lessons',
         cart: [],
-        Lessons: lessons
+        Lessons: lessons,
+        sortBy: "subject",        
+        orderBy: 'ascending',
     },
                
     methods: {
@@ -14,14 +16,21 @@ var store = new Vue ({
             return this.cart.length || '';
         },
         sorted() {
+            console.log(this.sortBy)
             let sortLessons = this.Lessons;       
-                let sortType = document.getElementById('sortbBy');
-                let sortOrder = document.getElementById('orderBy');
-                    sortType = sortType.value;
-                    sortOrder = sortOrder.value;
      
             sortLessons = sortLessons.sort((a,b) => {
-                    if(sortType == "subject"){
+                    if(this.sortBy == 'subject'){
+                        let fa = a.subject.toLowerCase(), fb = b.subject.toLowerCase();
+
+                        if (fa < fb ) {
+                            return -1
+                        }
+                        if (fa > fb ) {
+                            return 1
+                        }
+                    } 
+                    else if (this.sortBy == 'location'){                        
                         let fa = a.subject.toLowerCase(), fb = b.subject.toLowerCase();
 
                         if (fa < fb ) {
@@ -34,22 +43,7 @@ var store = new Vue ({
 
                 return 0
             })
-            if(sortOrder !=="ascending"){
-                sortLessons.reverse()
-            }
             return sortLessons
         },
-        filteredRecipes() {
-          let tempRecipes = this.lessons
-          
-          // Process search input
-          if (this.searchValue != '' && this.searchValue) {
-              tempRecipes = tempRecipes.filter((item) => {
-                return item.title
-                  .toUpperCase()
-                  .includes(this.searchValue.toUpperCase())
-              })
-            }
-        }
     }
 }) 
