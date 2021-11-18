@@ -20,7 +20,7 @@ let lessons = [
   {
         "id" : 3,
         "subject": "Web Development",
-        "location": "London",
+        "location": "Kensas",
         "price": 300,
         "spaces": 5,
         "numberPurchased": 5,
@@ -29,7 +29,7 @@ let lessons = [
     {
         "id" : 4,
         "subject": "English",
-        "location": "London",
+        "location": "Lagos",
         "price": 500,
         "spaces": 5,
         "numberPurchased": 5,
@@ -38,7 +38,7 @@ let lessons = [
     {
         "id" : 5,
         "subject": "Python",
-        "location": "London",
+        "location": "India",
         "price": 199,
         "spaces": 5,
         "numberPurchased": 5,
@@ -47,7 +47,7 @@ let lessons = [
     {
         "id" : 6,
         "subject": "JavaEE",
-        "location": "London",
+        "location": "India",
         "price": 499,
         "spaces": 5,
         "numberPurchased": 5,
@@ -65,7 +65,7 @@ let lessons = [
     {
         "id" : 8,
         "subject": "Hunting",
-        "location": "London",
+        "location": "Florida",
         "price": 69,
         "spaces": 5,
         "numberPurchased": 5,
@@ -74,7 +74,7 @@ let lessons = [
     {
         "id" : 9,
         "subject": "Music",
-        "location": "London",
+        "location": "Greece",
         "price": 299,
         "spaces": 5,
         "numberPurchased": 5,

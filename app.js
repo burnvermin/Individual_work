@@ -3,9 +3,10 @@ var store = new Vue ({
     data: {
         sitename: 'After School Lessons',
         cart: [],
-        Lessons: lessons,
-        sortBy: "subject",        
+        sortBy: "subject",  
         orderBy: 'ascending',
+        searchValue: '',
+        Lessons: lessons,      
     },
                
     methods: {
@@ -16,11 +17,10 @@ var store = new Vue ({
             return this.cart.length || '';
         },
         sorted() {
-            console.log(this.sortBy)
             let sortLessons = this.Lessons;       
      
             sortLessons = sortLessons.sort((a,b) => {
-                    if(this.sortBy == 'subject'){
+                    if(this.sortBy == "subject"){
                         let fa = a.subject.toLowerCase(), fb = b.subject.toLowerCase();
 
                         if (fa < fb ) {
@@ -31,7 +31,7 @@ var store = new Vue ({
                         }
                     } 
                     else if (this.sortBy == 'location'){                        
-                        let fa = a.subject.toLowerCase(), fb = b.subject.toLowerCase();
+                        let fa = a.location.toLowerCase(), fb = b.location.toLowerCase();
 
                         if (fa < fb ) {
                             return -1
@@ -40,9 +40,28 @@ var store = new Vue ({
                             return 1
                         }
                     }
-
                 return 0
             })
+            if (this.sortBy == 'price'){                        
+                sortLessons = sortLessons.sort((a,b) => {
+                    return a.price - b.price
+                })
+            }
+            if (this.sortBy == 'availability'){                        
+                sortLessons = sortLessons.sort((a,b) => {
+                    return a.spaces - b.spaces
+                })
+            }
+            if (this.orderBy !=="ascending") {
+                sortLessons.reverse()
+            }
+            if (this.searchValue != '' && this.searchValue) {
+                tempRecipes = tempRecipes.filter((item) => {
+                  return item.title
+                    .toUpperCase()
+                    .includes(this.searchValue.toUpperCase())
+                })
+              }
             return sortLessons
         },
     }
