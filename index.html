@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <title>After School Learning</title>
+</head>
+<body>
+    <div class="container" id="section1">   
+        <div class="header" >
+            <div class="sort">
+                <select name="sortby" id="sortbBy" v-on:click="sorted">
+                    <option  value="subject">Sort by Subject</option>
+                    <option value="location">Sort by Location</option>
+                    <option value="price">Sort by Price</option>
+                    <option value="availability">Sort by Availability</option>
+                </select>
+                <select name="orderby" id="orderBy" >
+                    <option id="order" value="ascending" >Ascending</option>
+                    <option id="order" value="descending">Descending</option>
+                </select>
+            </div>
+
+            <form action="" class="search">
+                <input type="text" v-model="searchValue" placeholder="Search for a lesson"><a class="fa fa-search"></a>
+            </form>
+
+            <button class="cart-btn" v-on:click="showcart">
+                Cart&nbsp;&nbsp;&nbsp;
+                <span class="fas fa-cart-plus"></span>
+            </button> 
+        <hr >      
+        </div>    
+            
+        <div class="section1">
+        <div v-for="lesson in Lessons" :key="lesson.id" class="list">
+                <img v-bind:src="lesson.image" alt="img" class="image">
+                <p><strong>Subject: </strong>{{lesson.subject}}</p>
+                <p><strong>Location: </strong>{{lesson.location}}</p>
+                <p><strong>Price: </strong><i class="fa-solid fa-dollar-sign"></i> {{lesson.price}}.00</p>
+                <p><strong>Available spaces: </strong>{{lesson.spaces}}</p>
+                <button class="btn"  v-on:Click="addItem">Buy Now!</button>
+        </div>
+        </div>
+        </div>
+
+    </div>
+    
+
+
+    <script src="lessons.js"></script>
+	<script src="app.js"></script>
+</body>
+</html>
