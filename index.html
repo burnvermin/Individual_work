@@ -10,43 +10,54 @@
     <title>After School Learning</title>
 </head>
 <body>
-    <div class="container" id="section1">   
+    <div class="container" id="section1"> 
+        
         <div class="header" >
             <div class="sort" >
-                <select name="sortBy" id="select" v-model="sortBy" >
+                   <select name="sortBy" id="select" v-model="sortBy" >
                     <option value="subject">Sort by Subject</option>
                     <option value="location">Sort by Location</option>
                     <option value="price">Sort by Price</option>
                     <option value="availability">Sort by Availability</option>
-                </select>
-                <select name="orderby" id="orderBy" v-model="orderBy">
-                    <option value="ascending" >Ascending</option>
-                    <option value="descending">Descending</option>
-                </select>
-            </div>
+                    </select>
+                    <select name="orderby" id="orderBy" v-model="orderBy">
+                        <option value="ascending" >Ascending</option>
+                        <option value="descending">Descending</option>
+                    </select>
+                </div>
 
-            <form action="" class="search">
-                <input type="text" v-model="searchValue"  placeholder="Search for a lesson"><a class="fa fa-search"></a>
-            </form>
+                <form action="" class="search">
+                    <input type="text" v-model="searchValue"  placeholder="Search for a lesson"></a>
+                </form>
 
-            <button class="cart-btn" >
-                Cart&nbsp;&nbsp;&nbsp;
-                <span class="fas fa-cart-plus"></span>
-            </button> 
-        <hr >      
+                <button class="cart-btn" value="add" v-on:click="showCheckout">
+                    Cart&nbsp;&nbsp;&nbsp;
+                    <span class="fas fa-cart-plus"></span>
+                </button> 
+            <hr >      
         </div>    
+        <div v-if='showProduct'>
+            <div class="section1">
+                <div v-for="lesson in sorted" :key="lesson.id" class="list">
+                        <img v-bind:src="lesson.image" alt="img" class="image">
+                        <p><strong>Subject: </strong>{{lesson.subject}}</p>
+                        <p><strong>Location: </strong>{{lesson.location}}</p>
+                        <p><strong>Price: </strong><i class="fa-solid fa-dollar-sign"></i> {{lesson.price}}.00</p>
+                        <p><strong>Available spaces: </strong>{{lesson.spaces}}</p>
+                        <button class="btn"  v-on:Click="addItem" >Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div v-else>
+
+            <div class="checkout">
+                <input type="text" placeholder="Name" id="name" v-model.trim ="checkout.name" />
+                <input type="number" placeholder="Phone Number" id="pNo" v-model ="checkout.pNo" />
+                <button type="submit" id="btnSub">Checkout</button>
+            </div>
+        </div>
             
-        <div class="section1">
-        <div v-for="lesson in Lessons" :key="lesson.id" class="list">
-                <img v-bind:src="lesson.image" alt="img" class="image">
-                <p><strong>Subject: </strong>{{lesson.subject}}</p>
-                <p><strong>Location: </strong>{{lesson.location}}</p>
-                <p><strong>Price: </strong><i class="fa-solid fa-dollar-sign"></i> {{lesson.price}}.00</p>
-                <p><strong>Available spaces: </strong>{{lesson.spaces}}</p>
-                <button class="btn"  >Buy Now!</button>
-        </div>
-        </div>
-        </div>
 
     </div>
     

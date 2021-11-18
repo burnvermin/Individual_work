@@ -1,15 +1,26 @@
 var store = new Vue ({
     el: '#section1',
     data: {
+        showProduct: true,
         sitename: 'After School Lessons',
         cart: [],
         sortBy: "subject",  
         orderBy: 'ascending',
         searchValue: '',
-        Lessons: lessons,      
+        Lessons: lessons,  
+        checkout: {
+            name: "",
+            pNo: null,
+        } ,   
     },
                
     methods: {
+        addItem: function() {
+            console.log(this.lessons.id)
+        },
+        showCheckout(){
+            this.showProduct = this.showProduct ? false : true;
+        },
 
     },
     computed: {
@@ -56,8 +67,8 @@ var store = new Vue ({
                 sortLessons.reverse()
             }
             if (this.searchValue != '' && this.searchValue) {
-                tempRecipes = tempRecipes.filter((item) => {
-                  return item.title
+                sortLessons = sortLessons.filter((item) => {
+                  return item.subject
                     .toUpperCase()
                     .includes(this.searchValue.toUpperCase())
                 })
