@@ -33,7 +33,7 @@ let lessons = [
         "price": 500,
         "spaces": 5,
         "numberPurchased": 5,
-        "image": "\images//ENG.jpg"
+        "image": "images//ENG.jpg"
     },
     {
         "id" : 5,
