@@ -6,6 +6,7 @@ let lessons = [
         "price": 250,
         "spaces": 5,
         "numberPurchased": 5,
+        "availableInventory" : 5,
         "image": "\images//Maths.png"
     },
     {
@@ -15,6 +16,7 @@ let lessons = [
         "price": 550,
         "spaces": 5,
         "numberPurchased": 5,
+        "availableInventory" : 5,
         "image": "\images//UX.jpeg"
   },
   {
@@ -24,6 +26,7 @@ let lessons = [
         "price": 300,
         "spaces": 5,
         "numberPurchased": 5,
+        "availableInventory" : 5,
         "image": "\images//WD.png"
     },
     {
@@ -33,6 +36,7 @@ let lessons = [
         "price": 500,
         "spaces": 5,
         "numberPurchased": 5,
+        "availableInventory" : 5,
         "image": "images//ENG.jpg"
     },
     {
@@ -42,6 +46,7 @@ let lessons = [
         "price": 199,
         "spaces": 5,
         "numberPurchased": 5,
+        "availableInventory" : 5,
         "image": "\images//Py.jpg"
     },
     {
@@ -51,6 +56,7 @@ let lessons = [
         "price": 499,
         "spaces": 5,
         "numberPurchased": 5,
+        "availableInventory" : 5,
         "image": "\images//EE.png"
     },
     {
@@ -60,6 +66,7 @@ let lessons = [
         "price": 700,
         "spaces": 5,
         "numberPurchased": 5,
+        "availableInventory" : 5,
         "image": "\images//RS.jpg"
     },
     {
@@ -69,6 +76,7 @@ let lessons = [
         "price": 69,
         "spaces": 5,
         "numberPurchased": 5,
+        "availableInventory" : 5,
         "image": "\images//Hunt.jpg"
     },
     {
@@ -78,6 +86,7 @@ let lessons = [
         "price": 299,
         "spaces": 5,
         "numberPurchased": 5,
+        "availableInventory" : 5,
         "image": "\images//MS.png"
     },
     {
@@ -87,6 +96,7 @@ let lessons = [
         "price": 10_000,
         "spaces": 5,
         "numberPurchased": 5,
+        "availableInventory" : 5,
         "image": "\images//maf.jpg"
     }
 ]

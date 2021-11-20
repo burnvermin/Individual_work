@@ -15,15 +15,34 @@ var store = new Vue ({
     },
                
     methods: {
-        addItem: function() {
-            console.log(lessons)
+        addToCart: function (lesson) {
+            this.cart.push(lesson.id)
+            if(lesson.spaces > 0){
+               --lesson.spaces    
+            }
+        },
+        canAddToCart: function(lesson){
+          return lesson.availableInventory > this.cartCount(lesson.id);
         },
         showCheckout(){
             this.showProduct = this.showProduct ? false : true;
         },
+        cartCount(id){
+            let count = 0;
+            for (let i = 0; i < this.cart.length; i++){
+                if(this.cart[i] === id){
+                    count++
+                }
+            }
+            return count;
+        }
 
     },
     computed: {
+
+        cartItemCount: function(){
+            return this.cart.length;
+        },
         
         sorted() {
             let sortLessons = this.Lessons;       

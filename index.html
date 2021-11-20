@@ -31,8 +31,9 @@
                 </form>
 
                 <button class="cart-btn" value="add" v-on:click="showCheckout">
-                    Cart&nbsp;&nbsp;&nbsp;
+                    Cart&nbsp;&nbsp;{{cartItemCount}}&nbsp;
                     <span class="fas fa-cart-plus"></span>
+                    
                 </button> 
             <hr >      
         </div>    
@@ -44,7 +45,11 @@
                         <p><strong>Location: </strong>{{lesson.location}}</p>
                         <p><strong>Price: </strong><i class="fa-solid fa-dollar-sign"></i> {{lesson.price}}.00</p>
                         <p><strong>Available spaces: </strong>{{lesson.spaces}}</p>
-                        <button class="btn"  v-on:Click="addItem" >Add to Cart</button>
+                        <button class="btn"  @click="addToCart(lesson)" v-if='canAddToCart(lesson)'>Add to Cart</button>
+                        <button disabled ='disabled' v-else>Add to Cart</button>
+                        <span v-if="lesson.availableInventory === cartCount(lesson.id)">
+                            Sold out!
+                        </span>
                 </div>
             </div>
         </div>
