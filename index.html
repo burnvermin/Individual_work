@@ -30,10 +30,13 @@
                     <input type="text" v-model="searchValue"  placeholder="Search for a lesson"></a>
                 </form>
 
-                <button class="cart-btn" value="add" v-on:click="showCheckout">
+                <button class="cart-btn" value="add" v-if="cart.length === 0 && showProduct !== false" disabled>
                     Cart&nbsp;&nbsp;{{cartItemCount}}&nbsp;
-                    <span class="fas fa-cart-plus"></span>
-                    
+                    <span class="fas fa-cart-plus"></span>                    
+                </button> 
+                <button class="cart-btn" value="add" v-on:click="showCheckout" v-else>
+                    Cart&nbsp;&nbsp;{{cartItemCount}}&nbsp;
+                    <span class="fas fa-cart-plus"></span>                    
                 </button> 
             <hr >      
         </div>    
