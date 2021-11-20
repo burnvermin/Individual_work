@@ -57,9 +57,20 @@
         <div v-else>
 
             <div class="checkout">
-                <input type="text" placeholder="Name" id="name" v-model.trim ="checkout.name" />
-                <input type="number" placeholder="Phone Number" id="pNo" v-model ="checkout.pNo" />
-                <button type="submit" id="btnSub">Checkout</button>
+                <div class="section1">
+                    <div v-for="lesson in cart" class="list">
+                        <img v-bind:src="lesson.image" alt="img" class="image">
+                        <p><strong>Subject: </strong>{{lesson.subject}}</p>
+                        <p><strong>Location: </strong>{{lesson.location}}</p>
+                        <p><strong>Price: </strong><i class="fa-solid fa-dollar-sign"></i> {{lesson.price}}.00</p>
+                        <button class="btn" @click="removeFromCart(lesson)">Remove</button>
+                    </div>
+                </div>
+                <div class="submit">                    
+                    <input type="text" placeholder="Name" id="letters" v-model.trim ="checkout.Name" />
+                    <input type="text" name="pNo" placeholder="Phone Number" id="pNo" v-model ="checkout.Phone_No" />
+                    <button type="submit" class="submitBtn" id="btnSub" v-on:click="isNumber" >Checkout</button>
+                </div>
             </div>
         </div>
             

@@ -9,20 +9,24 @@ var store = new Vue ({
         searchValue: '',
         Lessons: lessons,  
         checkout: {
-            name: "",
-            pNo: null,
+            Name: "",
+            Phone_No: null,
         } ,   
     },
                
     methods: {
         addToCart: function (lesson) {
-            this.cart.push(lesson.id)
+            this.cart.push(lesson)
             if(lesson.spaces > 0){
                --lesson.spaces    
             }
         },
         canAddToCart: function(lesson){
-          return lesson.availableInventory > this.cartCount(lesson.id);
+          return lesson.availableInventory > this.cartCount(lesson);
+        },
+        removeFromCart(lesson) {
+            this.cart.splice(this.cart.indexOf(lesson.id));            
+            ++lesson.spaces   
         },
         showCheckout(){
             this.showProduct = this.showProduct ? false : true;
@@ -35,7 +39,24 @@ var store = new Vue ({
                 }
             }
             return count;
-        }
+        },        
+        isNumber() {
+            let num = document.getElementById("pNo")
+            let lett = document.getElementById("letters")
+            let submitBtn = document.querySelector(".submitBtn")
+            var integers = /^[0-9]+$/
+            var letters = /^[A-Za-z]+$/
+            if(num.value.match(integers) && lett.value.match(letters)){                
+                alert('Your Registration number has accepted....');
+                window.location.href = "\index.html"
+                return true;
+            }
+            else{
+                alert('Please input only numeric characters for Phone number and letters for Name');
+
+                return false;
+            }
+        },
 
     },
     computed: {

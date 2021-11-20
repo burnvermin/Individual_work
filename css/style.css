@@ -87,12 +87,11 @@ body .container .section1 {
   display: grid;
   -ms-grid-columns: .2fr .2fr .2fr;
       grid-template-columns: .2fr .2fr .2fr;
-  -ms-grid-rows: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-row-gap: 5%;
   grid-column-gap: 5%;
   width: 80vw;
   margin: auto;
+  padding-bottom: 10em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -146,7 +145,27 @@ body .container .checkout {
   margin: auto;
 }
 
-body .container .checkout input {
+body .container .checkout .btn {
+  background-color: rgba(213, 115, 50, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+body .container .checkout .btn:hover {
+  background-color: rgba(253, 4, 4, 0.9);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  font-weight: bold;
+}
+
+body .container .checkout .submit {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+body .container .checkout .submit input {
   font: size 1em;
   padding: 10px 20px;
   border-top: none;
@@ -157,14 +176,14 @@ body .container .checkout input {
           box-shadow: -10px -2px 10px #d6d6d6;
 }
 
-body .container .checkout input:focus {
+body .container .checkout .submit input:focus {
   border-color: none;
   outline: none;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-body .container .checkout button {
+body .container .checkout .submit button {
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
@@ -176,7 +195,7 @@ body .container .checkout button {
   font-weight: bolder;
 }
 
-body .container .checkout button:hover {
+body .container .checkout .submit button:hover {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
 }
