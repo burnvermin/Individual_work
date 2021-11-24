@@ -25,7 +25,7 @@ body .container .bg {
   opacity: 0.6;
   background-color: black;
   position: absolute;
-  top: -5%;
+  top: -10%;
   height: 140vw;
   width: 99vw;
   z-index: -5;

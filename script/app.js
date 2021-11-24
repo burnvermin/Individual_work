@@ -25,11 +25,8 @@ var store = new Vue ({
           return lesson.availableInventory > this.cartCount(lesson);
         },
         removeFromCart(lesson) {     
-            console.log(this.cart.id)
-           /* if (this.cart.id == lesson.id){
                 this.cart.pop(lesson);   
                 ++lesson.spaces 
-            }*/
         },
         showCheckout(){
             this.showProduct = this.showProduct ? false : true;
